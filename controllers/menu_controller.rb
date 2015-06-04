@@ -114,6 +114,13 @@ def entry_submenu(entry)
     system "clear"
     puts "Enter entry number."
     selection = gets.chomp
+    if selection # @TODO: check for entry existence
+      puts 'Thanks, I\'ll get back to you! One Day.'
+    else
+       system "clear"
+       puts "#{selection} is not a valid input"
+       entries_submenu(entry)
+     end
 
    end
  end
