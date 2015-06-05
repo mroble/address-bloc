@@ -91,7 +91,7 @@
        entry_five = book.entries[4]
        check_entry(entry_five, "Sussie", "555-555-5555", "sussie@blocmail.com")
      end
-     
+end     
 
   # Test that AddressBook's .import_from_csv() method is working as expected
    context ".import_from_csv" do
@@ -102,7 +102,7 @@
        # Check the size of the entries in AddressBook
        expect(book_size).to eql 3
      end
-
+end
     it "checks the details of the first entry" do
        book.import_from_csv("entries_2.csv")
        # Check the first entry
@@ -115,7 +115,7 @@
        # Check the second entry
        entry_two = book.entries[1]
         check_entry(entry_two, "Collin", "555-555-5555", "collin@blocmail.com")
-
+      end
 
      it "checks the details of the third entry" do
        book.import_from_csv("entries.csv")
@@ -123,7 +123,3 @@
        entry_three = book.entries[2]
        check_entry(entry_three, "Muthia", "555-555-5555", "muthia@blocmail.com")
  end
-
-
-
- 
