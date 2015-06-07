@@ -1,14 +1,13 @@
+
  RSpec.describe AddressBook do  
    let(:book) { AddressBook.new }
-
 
  def check_entry(entry, expected_name, expected_number, expected_email)
     expect(entry.name).to eql expected_name
     expect(entry.phone_number).to eql expected_number
     expect(entry.email).to eql expected_email
   end
-
-
+end
 
    context "attributes" do
      it "should respond to entries" do
@@ -27,9 +26,9 @@
    context ".add_entry" do
      it "adds only one entry to the address book" do    
        book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
-       
-       expect(book.entries.size).eql? 1
+         expect(book.entries.size).eql? 1
      end
+
  
      it "adds the correct information to entries" do
        book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
@@ -40,6 +39,7 @@
        expect(new_entry.email).eql? 'augusta.king@lovelace.com'
      end
    end
+  
 
    context ".remove entry" do
     it "removes one entry from the address book" do
@@ -102,7 +102,7 @@ end
        # Check the size of the entries in AddressBook
        expect(book_size).to eql 3
      end
-end
+
     it "checks the details of the first entry" do
        book.import_from_csv("entries_2.csv")
        # Check the first entry
@@ -122,4 +122,7 @@ end
        # Check the third entry
        entry_three = book.entries[2]
        check_entry(entry_three, "Muthia", "555-555-5555", "muthia@blocmail.com")
- end
+  end
+end
+
+
