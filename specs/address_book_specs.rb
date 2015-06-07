@@ -125,4 +125,18 @@ end
   end
 end
 
+   # Test the binary_search method
+   context ".binary_search" do
+     it "searches AddressBook for a non-existent entry" do
+       book.import_from_csv("entries.csv")
+       entry = book.binary_search("Dan")
+       expect(entry).to be_nil
+     end
 
+ it "searches AddressBook for Bill" do
+       book.import_from_csv("entries.csv")
+       entry = book.binary_search("Bill")
+       expect entry.instance_of?(Entry)
+       check_entry(entry, "Bill", "555-555-5555", "bill@blocmail.com")
+     end
+   end

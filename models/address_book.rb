@@ -36,7 +36,10 @@ require "csv"
     end
    end
 
-
+      # Search AddressBook for a specific entry by name
+   def binary_search(name)
+     return nil
+   end
 
 
 
