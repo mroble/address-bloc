@@ -1,4 +1,4 @@
-require_relative "entry"
+require_relative "entry.rb"
 require "csv"
  
  class AddressBook
@@ -10,7 +10,7 @@ require "csv"
    
    def add_entry(name, phone, email)
      index = 0
-     @entries.each do |entry|   
+     @entries.each do |entry|
        if name < entry.name
          break
        end
@@ -29,17 +29,11 @@ require "csv"
 
     csv.each do |row|
       row_hash = row.to_hash
-      add_entry(row_hash["name"], row_hash["phone_number"], row_hash["email"])
+      add_entry(row_hash["name"], row_hash["phone_number"], row_hash["email"]) if !row_hash.empty?
     end
 
       return csv.count
     end
    end
-
-      # Search AddressBook for a specific entry by name
-   def binary_search(name)
-     return nil
-   end
-
 
 
