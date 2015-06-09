@@ -170,14 +170,6 @@ def search_submenu(entry)
        search_submenu(entry)
      end
    end
-
-
-
-
-
-
-
-
  
    def read_csv
     print "Enter CSV file to import: "
@@ -200,6 +192,7 @@ def search_submenu(entry)
      end
    end
 
+  
   def delete_entry(entry)
      @address_book.entries.delete(entry)
      puts "#{entry.name} has been deleted"
@@ -221,3 +214,17 @@ def search_submenu(entry)
      puts "Updated entry:"
      puts entry
    end
+
+   def demolish
+    puts "Delete all entries? Enter y/n."
+    selection = gets.chomp
+    if y
+      @address_book.entries.delete
+      puts "All entries have been deleted."
+    else
+      main_menu
+   end
+end
+end
+
+
