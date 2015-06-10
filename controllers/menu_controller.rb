@@ -238,8 +238,8 @@ def search_submenu(entry)
    def demolish
     puts "Delete all entries? Enter y/n."
     selection = gets.chomp
-    if y
-      @address_book.entries.delete
+    if selection == 'y'
+      @address_book.entries = []
       puts "All entries have been deleted."
     else
       main_menu
